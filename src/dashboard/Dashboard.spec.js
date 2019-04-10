@@ -1,6 +1,6 @@
 // Test away
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render } from 'react-testing-library';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 
@@ -12,16 +12,16 @@ describe('<Dashboard />', () => {
   });
   describe('<Display />', () => {
     it('Display is rendered', () => {
-      const { queryByText } = render(<Dashboard />);
-      expect(queryByText(/unlocked/i)).not.toBeNull();
-      expect(queryByText(/open/i)).not.toBeNull();
+      const { getByText } = render(<Dashboard />);
+      expect(getByText(/unlocked/i)).not.toBeNull();
+      expect(getByText(/open/i)).not.toBeNull();
     });
   });
   describe('<Control />', () => {
     it('Control is rendered', () => {
-      const { queryByText } = render(<Dashboard />);
-      expect(queryByText(/close gate/i)).not.toBeNull();
-      expect(queryByText(/lock gate/i)).not.toBeNull();
+      const { getByText } = render(<Dashboard />);
+      expect(getByText(/close gate/i)).not.toBeNull();
+      expect(getByText(/lock gate/i)).not.toBeNull();
     });
     // it('displays closed if the closed prop is true and open if otherwise', () => {
     //   const { queryByText } = render(<Dashboard closed={true} />);
