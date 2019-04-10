@@ -5,8 +5,6 @@ import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 
 import Controls from './Controls';
-// import Dashboard from '../dashboard/Dashboard';
-import { fireEvent } from 'react-testing-library/dist';
 
 describe('<Controls />', () => {
   it('component renders', () => {
